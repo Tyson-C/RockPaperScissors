@@ -1,0 +1,179 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    background-color: slateblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: 900;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    min-width: 200px;
+    margin: 0 auto;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.results {
+    background-color: lightskyblue;
+    /* width: 100%; */
+    height: 40vh;
+    border-radius: 8px;
+    border: 5px outset darkslateblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(0.3rem, 5vw, 3rem);
+    padding: 1rem;
+    color: darkslateblue;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.player_buttons {
+    width: 100vw;
+    border-radius: 8px;
+    padding: 1rem 3rem;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    border: 5px outset darkslateblue;
+    color: darkslateblue;
+}
+
+@media screen and (max-width: 629px) {
+    .player_buttons {
+        flex: 0 1 auto;
+    }
+    body {
+      padding: 0.75rem;
+    }
+    .results {
+      height: 30vh;
+    }
+}
+
+.rounds_container {
+  background-color: lightskyblue;
+  max-height: 25vh;
+  border-radius: 8px;
+  border: 5px outset darkslateblue;
+  padding: 0.5rem;
+  color: darkslateblue;
+  /* border: 5px solid blue; */
+}
+
+.rounds_header {
+  font-size: clamp(1.5rem, 10vw, 3rem);
+  text-align: center;
+  min-width: max-content;
+}
+
+.rounds {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.round {
+  min-height: 50px;
+  height: auto;
+  border: 5px outset darkslateblue;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  flex: 1 0 auto;
+}
+
+.round:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
